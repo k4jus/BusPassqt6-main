@@ -1,0 +1,7 @@
+Filesharing procedure:
+mDNS broadcast -> TCP connection with resolved IPs -> file-streaming over socket -> close
+Host device:
+avahi-client
+Client (qt6) device):
+QtNetwork -> QTcpSocket; access-restricted storage: QtStandartPaths::writableLocation
+

@@ -1,0 +1,187 @@
+@font-face {
+    font-family: "Stage-Coach";
+    src: url("./fonts/StageCoach-Regular.otf");
+}
+
+@font-face {
+    font-family: "Google-Sans";
+    src: url("./fonts/Google-Sans.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Google-Sans";
+    src: url("./fonts/Google-Sans-Bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Google-Sans";
+    src: url("./fonts/Google-Sans-Medium.ttf");
+    font-weight: medium;
+}
+
+@keyframes text-fade {
+    0% { opacity: 100%;}
+    30% { opacity: 100%;}
+    70% { opacity: 0%;}
+    100% { opacity: 0%;}    
+}
+
+@keyframes time-fade {
+    0% { opacity: 0%;}
+    30% { opacity: 0%;}
+    70% { opacity: 100%;}
+    100% { opacity: 100%;}    
+}
+
+:root {
+    --frame-bg: rgb(10,28,43);
+    --main-bg: rgb(250,250,250);
+    --gyro-box-bg-default: #009BDE;
+    --details-color: rgb(59 129 105);
+    --header-bg: rgb(15,46,85);
+    --code-box-bg: rgb(208, 208, 208);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+    margin: 0;
+    font-family: "Google-Sans";
+    font-weight: normal;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+ }
+
+.frame {
+    background-color: var(--frame-bg);
+}
+
+.outside-text {
+    color: var(--main-bg);
+    font-weight: bold;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5% 3%;
+    background-color: var(--header-bg);
+    max-height: 15vh;
+}
+
+#header > svg {
+    fill: var(--main-bg);
+    max-width: 4vh;
+}
+
+#header > p {
+    font-size: 0.5em;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    min-height: 80%;
+    background-color: var(--main-bg);
+    margin: 2vh 1.5vh;
+    align-items: center;
+}
+
+#main > img {
+    width: 50vw;
+    margin: 9vh 2vh 2vh 2vh;
+}
+
+#price-box {
+    position: fixed;
+    left: 0;
+    top: 10%;
+    display: flex;
+    flex-direction: row;
+    min-width: 72vw;
+    justify-content: space-between;
+    padding: 2% 5% 2% 10%;
+    border-radius: 0 2vh 2vh 0;
+}
+
+#price-box > p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+#ticket-title {
+    font-size: 1.7em;
+    font-weight: medium;
+    margin-top: 0.5em;
+    letter-spacing: 1px;
+}
+
+.ticket-info {
+    font-size: 0.5em;
+}
+
+#ticket-expire {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 65vw;
+    margin: 10vh 0 5vh 0;
+}
+
+#code-box {
+    padding: 0.8em 4em;
+    background-color: var(--code-box-bg);
+    border-radius: 1vh;
+}
+
+#details-txt {
+    color: var(--details-color);
+    margin: 3vh;
+}
+
+#gyro-box {
+    position: fixed;
+    top: 54%;
+    left: 3%;
+    width: 94%;
+    height: 6vh;
+    padding: 1vh 0;
+    background-color: var(--gyro-box-bg-default);
+    color: black;
+    font-family: "Stage-Coach";
+    font-size: 2.6em;
+}
+
+#gyro-canvas {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 70%;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+#gyro-text {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: text-fade 2.5s infinite alternate;
+}
+
+#gyro-time {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: time-fade 2.5s infinite alternate;
+}
